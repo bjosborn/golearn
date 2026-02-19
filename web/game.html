@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regicide - Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Regicide</h1>
+            <button id="back-to-lobby" class="btn btn-secondary">Back to Lobby</button>
+        </header>
+
+        <div class="game-board">
+            <div class="enemy-section">
+                <h2>Enemy</h2>
+                <div id="current-enemy" class="card-slot">
+                    <div class="card enemy-card"></div>
+                </div>
+                <div class="enemy-stats">
+                    <p>Health: <span id="enemy-health">0</span></p>
+                    <p>Attack: <span id="enemy-attack">0</span></p>
+                </div>
+            </div>
+
+            <div class="deck-section">
+                <div class="deck-area">
+                    <div class="deck-pile">
+                        <div class="card card-back" id="draw-deck">
+                            <span class="deck-count" id="deck-count">0</span>
+                        </div>
+                        <p>Draw Deck</p>
+                    </div>
+                    <div class="deck-pile">
+                        <div class="card card-back discard" id="discard-pile">
+                            <span class="deck-count" id="discard-count">0</span>
+                        </div>
+                        <p>Discard</p>
+                    </div>
+                    <div class="deck-pile">
+                        <div class="card card-back enemy-deck" id="enemy-deck">
+                            <span class="deck-count" id="enemy-deck-count">12</span>
+                        </div>
+                        <p>Enemies</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="players-section">
+                <h2>Players</h2>
+                <div id="players-area"></div>
+            </div>
+
+            <div class="current-player-section">
+                <h2>Your Hand</h2>
+                <div id="player-hand" class="hand-area"></div>
+                <div class="player-actions">
+                    <button id="play-cards-btn" class="btn btn-primary" disabled>Play Selected Cards</button>
+                    <button id="yield-btn" class="btn btn-warning">Yield Turn</button>
+                    <button id="discard-btn" class="btn btn-danger" disabled>Discard</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-log">
+            <h3>Game Log</h3>
+            <div id="game-activity"></div>
+        </div>
+
+        <div class="game-status">
+            <p>Current Turn: <span id="current-turn-player">-</span></p>
+            <p>Status: <span id="game-status">Ready</span></p>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
