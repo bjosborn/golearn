@@ -103,10 +103,16 @@ class Lobby {
 
         this.players.forEach(player => {
             const li = document.createElement('li');
-            li.innerHTML = `
-                <span>${player.name}</span>
-                <button class="remove-player-btn" onclick="lobby.removePlayer(${player.id})">✕</button>
-            `;
+            const nameSpan = document.createElement('span');
+            nameSpan.textContent = player.name;
+            
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'remove-player-btn';
+            removeBtn.textContent = '✕';
+            removeBtn.addEventListener('click', () => this.removePlayer(player.id));
+            
+            li.appendChild(nameSpan);
+            li.appendChild(removeBtn);
             playersList.appendChild(li);
         });
 

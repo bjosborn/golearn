@@ -171,13 +171,13 @@ class RegicideGame {
             this.drawNextEnemy();
         } else {
             // Enemy attacks back (simplified)
-            const damage = Math.min(this.currentEnemy.attack, currentPlayer.hand.length);
-            if (damage > 0) {
-                for (let i = 0; i < damage && currentPlayer.hand.length > 0; i++) {
+            const cardsToDiscard = Math.min(this.currentEnemy.attack, currentPlayer.hand.length);
+            if (cardsToDiscard > 0) {
+                for (let i = 0; i < cardsToDiscard && currentPlayer.hand.length > 0; i++) {
                     const card = currentPlayer.hand.pop();
                     this.discardPile.push(card);
                 }
-                this.log(`Enemy attacks! ${currentPlayer.name} discards ${damage} card(s)`);
+                this.log(`Enemy attacks! ${currentPlayer.name} discards ${cardsToDiscard} card(s)`);
             }
         }
 

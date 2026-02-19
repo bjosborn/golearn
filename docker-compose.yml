@@ -5,6 +5,8 @@ services:
     image: mysql:8.0
     container_name: regicide-mysql
     environment:
+      # NOTE: For production, use Docker secrets or environment variables for credentials
+      # This is a development/demo configuration only
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: regicide
     ports:
